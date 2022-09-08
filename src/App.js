@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import { Button } from 'antd';
+import { useState } from 'react';
 import './App.css';
+import { DynamicForm } from './components/forms';
+import DynamicTable from './components/table';
+import { initData } from './components/table/data';
+
 
 function App() {
+  const [data, setData] = useState(initData);
+  const [isOpen, setOpen] = useState(false)
+
+  const onNew = (record) => {
+    setData(data => data.concat(record));
+    setOpen(false)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Button onClick={() => setOpen(true)}> Create </Button>
+      <DynamicTable data={data} updateData={setData} />
+      <DynamicForm isOpen={isOpen} setOpen={onNew} />
     </div>
   );
 }
