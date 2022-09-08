@@ -8,12 +8,6 @@ export const columns = (onClick) => [
     sortDirections: ["descend"],
   },
   {
-    title: "Title 2",
-    dataIndex: "title2",
-    key: "title2",
-    sortDirections: ["descend"],
-  },
-  {
     title: "Type",
     dataIndex: "type",
     key: "type",

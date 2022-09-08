@@ -12,11 +12,6 @@ export const formSchema = [
     component: "text", //simple input https://ant.design/components/input/#header
   },
   {
-    name: "title2",
-    label: "Title2",
-    component: "text", //simple input https://ant.design/components/input/#header
-  },
-  {
     name: "type",
     component: "select", // https://ant.design/components/select/#header
     label: "Type",
